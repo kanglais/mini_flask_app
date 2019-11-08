@@ -1,0 +1,13 @@
+I'd never had to do this sort of project before.
+
+Last week I had a conversation with someone about Flask, and I'd never used it, so I decided to use Flask.
+I know I also could've used Django or probably a bunch of other frameworks, but I decided on this one... 
+
+I started by looking into the documentation & quick start guides, and first made a little hello-world flask app. Once that worked I started looking into the json.
+
+I started by just returning the whole json file using requests.get (though, reviewing this project later on I realized I could have done this
+with flask's request library as well). Then I created a little loop to iterate over the lists in the json, to access the correct keys
+and values I needed to return. I put these both into functions in get_json.py.
+
+Once that was working, I called those functions from the (now modified) hello-world app so that it returned the json result based on the country code
+in the url, then added another function to catch exceptions (non-valid country codes) and return a 404.
