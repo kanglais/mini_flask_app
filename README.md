@@ -19,7 +19,7 @@ pip install -r requirements.txt
 We're using flask, so we have to tell flask that we want it to read main: 
 
 ```
-export FLASK_APP=main.py
+export FLASK_APP=mini_flask_app.py
 ```
 
 To run the app, choose either: 
