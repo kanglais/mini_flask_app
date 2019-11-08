@@ -1,7 +1,10 @@
 I'd never had to do this sort of project before.
 
 Last week I had a conversation with someone about Flask, and I'd never used it, so I decided to use Flask.
-I know I also could've used Django or probably a bunch of other frameworks, but I decided on this one... 
+I know I also could've used Django or probably a bunch of other frameworks, but I decided on this one... After looking it up it
+seemed to have all the functionality that I needed, and there was a lot of documentation and quick-start guides, so I thought
+that I would be able to 'fail quickly' if I found that it wouldn't work and therefore wouldn't waste too much time on it.
+Fortunately, it ended up being super useful and exactly what I needed.
 
 I started by looking into the documentation & quick start guides, and first made a little hello-world flask app. Once that worked I started looking into the json.
 
@@ -11,3 +14,5 @@ and values I needed to return. I put these both into functions in get_json.py.
 
 Once that was working, I called those functions from the (now modified) hello-world app so that it returned the json result based on the country code
 in the url, then added another function to catch exceptions (non-valid country codes) and return a 404.
+
+Finally, I added a test (using pytest) to check that we get a 404 if there's nothing behind the url we're calling.

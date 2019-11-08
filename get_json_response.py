@@ -1,17 +1,22 @@
 import requests
 
-response = requests.get('http://jsonvat.com')
+def get_response():
+    try:
+        return requests.get('http://jsonvat.com')
+    except:
+        return
 
-def check_code_list():
+def check_code_list(response):
     codes = []
     for country in response.json()['rates']:
         codes.append(country['code'])
     return codes
 
 
-def get_country(country_code):
+def get_country(country_code, response):
+    country_code = country_code.upper()
     for line in response.json()['rates']:
-        if line['country_code'] == country_code.upper():
+        if line['country_code'] == country_code:
             return line
 
 def get_standard_rate(country):
