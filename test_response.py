@@ -2,7 +2,8 @@ import pytest
 
 from get_json_response import get_response
 
-rates = get_response().json()['rates']
+response = get_response()
 
 def test_response():
-    assert rates
+
+    assert str(response) == '<Response [200]>'
