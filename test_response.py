@@ -1,9 +1,9 @@
 import pytest
 
-from get_json_response import get_response
-
-response = get_response()
+import get_json_response
 
 def test_response():
-
-    assert str(response) == '<Response [200]>'
+    country_code = 'NL'
+    response = get_json_response.get_response()
+    country = get_json_response.get_country(country_code, response)
+    assert country['name'] == 'Netherlands'

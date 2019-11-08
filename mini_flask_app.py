@@ -9,13 +9,15 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 @app.route('/vat/')
 def vat_home():
+    response = get_json_response.get_response()
+    codes = get_json_response.check_code_list(response)
+
     message = 'add one of these country codes to the end of your url: ' + str(codes)
     return message
 
 @app.route('/vat/<country_code>', methods=["GET"])
 def vat_app(country_code):
     response = get_json_response.get_response()
-
     codes = get_json_response.check_code_list(response)
 
     if response.status_code == 200:
