@@ -15,4 +15,4 @@ and values I needed to return. I put these both into functions in get_json.py.
 Once that was working, I called those functions from the (now modified) hello-world app so that it returned the json result based on the country code
 in the url, then added another function to catch exceptions (non-valid country codes) and return a 404.
 
-Finally, I added a test (using pytest) to check that we get a 404 if there's nothing behind the url we're calling.
+Finally, I added a test (using pytest) to check the response from the url is correct.
